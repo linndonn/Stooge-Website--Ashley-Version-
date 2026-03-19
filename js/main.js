@@ -45,62 +45,26 @@ $(function () {
     /***************************
 
     preloader
-    
+
     ***************************/
 
     var timeline = gsap.timeline();
 
+    // Show the preloader animation with video
     timeline.to(".mil-preloader-animation", {
         opacity: 1,
+        duration: 0.5,
     });
 
-    timeline.fromTo(
-        ".mil-animation-1 .mil-h3", {
-            y: "30px",
-            opacity: 0
-        }, {
-            y: "0px",
-            opacity: 1,
-            stagger: 0.4
-        },
-    );
-
-    timeline.to(".mil-animation-1 .mil-h3", {
-        opacity: 0,
-        y: '-30',
-    }, "+=.3");
-
-    timeline.fromTo(".mil-reveal-box", 0.1, {
-        opacity: 0,
-    }, {
-        opacity: 1,
-        x: '-30',
-    });
-
-    timeline.to(".mil-reveal-box", 0.45, {
-        width: "100%",
-        x: 0,
-    }, "+=.1");
-    timeline.to(".mil-reveal-box", {
-        right: "0"
-    });
-    timeline.to(".mil-reveal-box", 0.3, {
-        width: "0%"
-    });
-    timeline.fromTo(".mil-animation-2 .mil-h3", {
-        opacity: 0,
-    }, {
-        opacity: 1,
-    }, "-=.5");
-    timeline.to(".mil-animation-2 .mil-h3", 0.6, {
-        opacity: 0,
-        y: '-30'
-    }, "+=.5");
-    timeline.to(".mil-preloader", 0.8, {
+    // Keep the video visible for 3 seconds, then fade out
+    timeline.to(".mil-preloader", {
         opacity: 0,
         ease: 'sine',
-    }, "+=.2");
-    timeline.fromTo(".mil-up", 0.8, {
+        duration: 0.8,
+    }, "+=3");
+
+    // Fade in the main content
+    timeline.fromTo(".mil-up", {
         opacity: 0,
         y: 40,
         scale: .98,
@@ -110,10 +74,11 @@ $(function () {
         y: 0,
         opacity: 1,
         scale: 1,
+        duration: 0.8,
         onComplete: function () {
             $('.mil-preloader').addClass("mil-hidden");
         },
-    }, "-=1");
+    }, "-=0.5");
     /***************************
 
     anchor scroll
@@ -1049,4 +1014,40 @@ $(function () {
 
     });
 
+    /***************************
+
+    logo color transition on scroll
+
+    ***************************/
+    const logoElement = document.querySelector('.mil-logo');
+
+    window.addEventListener('scroll', function() {
+        if (!logoElement) return;
+
+        const logoRect = logoElement.getBoundingClientRect();
+        const logoY = logoRect.top + window.scrollY;
+
+        // Get all elements with light backgrounds
+        const lightBgElements = document.querySelectorAll('.mil-soft-bg, section:not(.mil-dark-bg)');
+        let isOverLight = false;
+
+        lightBgElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const elementTop = rect.top + window.scrollY;
+            const elementBottom = elementTop + rect.height;
+
+            // Check if logo is within this light background section
+            if (logoY >= elementTop && logoY <= elementBottom) {
+                isOverLight = true;
+            }
+        });
+
+        if (isOverLight) {
+            logoElement.classList.add('mil-logo-dark');
+        } else {
+            logoElement.classList.remove('mil-logo-dark');
+        }
+    });
+
 });
+
