@@ -48,12 +48,12 @@
 
         <!-- frame -->
         <div class="mil-frame">
-            <div class="mil-frame-top" style="align-items: flex-start;">
-                <a href="home-1.html" class="mil-logo" style="margin-top: -10px;"><img src="img/logo/Stooge_Co_White.png" alt="Stooge & Co Logo"></a>
-                <nav style="display: flex; gap: 35px; align-items: center; margin-top: -10px;">
-                    <a href="#about" style="color: #fff; text-decoration: none; font-size: 13px; letter-spacing: 2px; font-weight: 600; text-transform: uppercase;">About</a>
-                    <a href="services.html" style="color: #fff; text-decoration: none; font-size: 13px; letter-spacing: 2px; font-weight: 600; text-transform: uppercase;">Services</a>
-                    <a href="contact.html" style="color: #fff; text-decoration: none; font-size: 13px; letter-spacing: 2px; font-weight: 600; text-transform: uppercase;">Contact Us</a>
+            <div class="mil-frame-top">
+                <a href="home-1.html" class="mil-logo" style="margin-top: -25px; margin-left: 0px;"><img src="img/logo/Stooge_Co_White.png" alt="Stooge & Co Logo"></a>
+                <nav style="display: flex; gap: 35px; align-items: center; margin-top: -50px; margin-right: 85px;">
+                    <a href="#about" style="color: #fff; text-decoration: none; font-size: 13px; letter-spacing: 2px; font-weight: 400; text-transform: uppercase;">About</a>
+                    <a href="services.html" style="color: #fff; text-decoration: none; font-size: 13px; letter-spacing: 2px; font-weight: 400; text-transform: uppercase;">Services</a>
+                    <a href="contact.html" style="color: #fff; text-decoration: none; font-size: 13px; letter-spacing: 2px; font-weight: 400; text-transform: uppercase;">Contact Us</a>
                 </nav>
             </div>
             <div class="mil-frame-bottom">
@@ -74,6 +74,12 @@
                 <!-- banner -->
                 <section class="mil-banner mil-dark-bg">
                     <div class="mi-invert-fix">
+                        <div class="mil-animation-frame">
+                            <div class="mil-animation mil-position-1 mil-scale" data-value-1="7" data-value-2="1.6"></div>
+                            <div class="mil-animation mil-position-2 mil-scale" data-value-1="4" data-value-2="1"></div>
+                            <div class="mil-animation mil-position-3 mil-scale" data-value-1="1.2" data-value-2=".1"></div>
+                        </div>
+
                         <video autoplay muted loop class="mil-banner-video">
                             <source src="img/Background/StoogeCo_Website_Landing_Page.mp4" type="video/mp4">
                             Your browser does not support the video tag.
@@ -83,16 +89,18 @@
 
                         <div class="container">
                             <div class="mil-banner-content mil-up">
-  
-<div style="display: flex; gap: 20px; justify-content: flex-start; margin-left: -80px;">
-                                    <a href="services.html">
-                                        <img src="img/icons/Our_Services.png" alt="Our Services" style="width: 250px; height: auto;">
-                                    </a>
-                                    <a href="portfolio-1.html">
-                                        <img src="img/icons/Contact_Button.png" alt="Contact Us" style="width: 250px; height: auto;">
-                                    </a>
-                                </div>
 
+                                <a href="services.html" class="mil-button mil-arrow-place mil-btn-space" style="font-size: 16px; height: 85px; padding: 0 20px 0 60px;">
+                                    <span>Our Services</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mil-arrow">
+                                        <path d="M 14 5.3417969 C 13.744125 5.3417969 13.487969 5.4412187 13.292969 5.6367188 L 13.207031 5.7226562 C 12.816031 6.1136563 12.816031 6.7467188 13.207031 7.1367188 L 17.070312 11 L 4 11 C 3.448 11 3 11.448 3 12 C 3 12.552 3.448 13 4 13 L 17.070312 13 L 13.207031 16.863281 C 12.816031 17.254281 12.816031 17.887344 13.207031 18.277344 L 13.292969 18.363281 C 13.683969 18.754281 14.317031 18.754281 14.707031 18.363281 L 20.363281 12.707031 C 20.754281 12.316031 20.754281 11.682969 20.363281 11.292969 L 14.707031 5.6367188 C 14.511531 5.4412187 14.255875 5.3417969 14 5.3417969 z" />
+                                    </svg>
+                                </a>
+
+                                <a href="portfolio-1.html" class="mil-button mil-btn-space" style="font-size: 16px; height: 85px; padding: 0 20px 0 60px; background-color: rgb(0,0,0);">
+                                    <span style="color: #fff;">Contact Us</span>
+                                    <img src="img/icons/whatsapp_con.png" alt="WhatsApp" style="width: 40px; height: 40px; margin-left: 15px;">
+                                </a>
 
                             </div>
                         </div>
